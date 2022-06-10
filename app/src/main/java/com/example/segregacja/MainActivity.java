@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton add_button;
+    SearchView sv;
 
     MyDatabaseHelper myDB;
     ArrayList<String> trash_id, trash_name, where_throw;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
+        sv = findViewById(R.id.sv);
         add_button.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, AddActivity.class);
             startActivity(intent);
